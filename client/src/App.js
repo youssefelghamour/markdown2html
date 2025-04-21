@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
+import logo from './assets/logo.png';
+
 
 class App extends Component {
   constructor(props) {
@@ -30,6 +32,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
+          <img src={logo} className='App-logo' alt='logo' />
           <p>Markdown2HTML</p>
         </header>
   
