@@ -7,7 +7,8 @@ class App extends Component {
     super(props);
     this.state = {
       markdown: '',
-      html: ''
+      html: '',
+      preview: true
     };
   }
 
@@ -57,9 +58,27 @@ class App extends Component {
           </div>
 
           <div className='outputContainer'>
-            <h2>HTML Output</h2>
-            <div className="htmlOutput" dangerouslySetInnerHTML={{ __html: this.state.html }}>
+            <div className="outputHeader">
+              <h2>HTML Output</h2>
+
+              <div>
+                <button className="preview-button" onClick={() => this.setState({ preview: true })} id={!this.state.preview ? 'not-selected-button' : ''}>
+                  Preview
+                </button>
+                <button className="html-button" onClick={() => this.setState({ preview: false })} id={this.state.preview ? 'not-selected-button' : ''}>
+                  HTML
+                </button>
+              </div>
             </div>
+            {this.state.preview ?
+              (
+                <div className="htmlOutput" dangerouslySetInnerHTML={{ __html: this.state.html }}>
+                </div>
+              ) : (
+                <div className="rawHtmlOutput">
+                  {this.state.html}
+                </div>
+              )}
           </div>
         </div>
   
