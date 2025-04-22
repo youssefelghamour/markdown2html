@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
+import { MdOutlineContentCopy } from "react-icons/md";
+
 
 
 class App extends Component {
@@ -71,6 +73,9 @@ class App extends Component {
                 </button>
               </div>
             </div>
+            <button className="copy-button" onClick={() => navigator.clipboard.writeText(this.state.html)}>
+              <MdOutlineContentCopy size={17}/>
+            </button>
             {this.state.preview ?
               (
                 <div className="htmlOutput" dangerouslySetInnerHTML={{ __html: this.state.html }}>
