@@ -45,6 +45,7 @@ class App extends Component {
         <div className="Hero-section">
           <div className="Background-shape">
             <div className="wavy-shape"></div>
+            <div className="second-wavy-shape"></div>
           </div>
           <h1>Markdown2HTML</h1>
           <h2>Instant Preview, Instant Conversion</h2>

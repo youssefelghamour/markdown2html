@@ -68,6 +68,14 @@
   margin: 0;
 }
 
+.Hero-section h2 {
+  color: black;
+}
+
+.Hero-section p {
+  color: #f2f2f2;
+}
+
 
 .Background-shape {
   position: relative;
@@ -80,7 +88,18 @@
   left: -80px;
   background-color: #6c63ff;
   z-index: 1;
-  rotate: -0.5deg;
+  rotate: -2deg;
+  width: 131vw;
+}
+
+.second-wavy-shape {
+  position: absolute;
+  top: -360px;
+  height: 600px;
+  /*left: -550px;*/
+  background-color: #4d4b6c;
+  z-index: 0;
+  rotate: 0.5deg;
   width: 131vw;
 }
 
