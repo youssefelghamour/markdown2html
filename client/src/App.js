@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import logo from './assets/logo.png';
 
 
 class App extends Component {
@@ -40,19 +39,26 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className='App-logo' alt='logo' />
-          <p>Markdown2HTML</p>
         </header>
+
+        <div className="Hero-section">
+          <div className="Background-shape">
+            <div className="wavy-shape"></div>
+          </div>
+          <h1>Markdown2HTML</h1>
+          <h2>Instant Preview, Instant Conversion</h2>
+          <p>An interactive tool that shows you how your Markdown will look as you type.</p>
+        </div>
   
         <div className="App-content">
-          <div className='markdownInputContainer'>
+          <div className='inputContainer'>
             <h2>Markdown Input</h2>
             <textarea className="markdownInput" onChange={this.handleMarkdownChange} value={this.state.markdown}></textarea>
           </div>
 
-          <div className='markdownOutputContainer'>
+          <div className='outputContainer'>
             <h2>HTML Output</h2>
-            <div className="markdownOutput" dangerouslySetInnerHTML={{ __html: this.state.html }}>
+            <div className="htmlOutput" dangerouslySetInnerHTML={{ __html: this.state.html }}>
             </div>
           </div>
         </div>

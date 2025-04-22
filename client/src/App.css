@@ -8,24 +8,32 @@
   /*text-align: center;*/
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  height: 100vh;
+  height: fit-content;
+  background: #f2f2f2;
 }
 
 
 
 
 .App-header {
-  background-color: #282c34;
-  min-height: 10%;
+  /*background-color: #282c34;*/
+  min-height: 8%;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  /*justify-content: center;*/
   font-size: 20px;
   color: #00796B;
   width: 100%;
+  position: absolute;
+}
+
+.App-header h1 {
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-size: 22px;
+  margin-left: 10px
 }
 
 .App-logo {
@@ -34,55 +42,109 @@
 
 
 
+
+.Hero-section {
+  min-height: 400px;
+  align-content: center;
+  text-align: center;
+  background: linear-gradient(133deg, #ffffff, #ff780085, #1b7a6b);
+  width: 100%;
+  padding-top: 2%;
+  padding-bottom: 4%;
+  background: linear-gradient(0deg, #f2f2f2, white 40%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.Hero-section h1, h2, p {
+  position: relative;
+  z-index: 1;
+}
+
+.Hero-section h1 {
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-size: 40px;
+  margin: 0;
+}
+
+
+.Background-shape {
+  position: relative;
+}
+
+.wavy-shape {
+  position: absolute;
+  top: -375px;
+  height: 600px;
+  left: -80px;
+  background-color: #6c63ff;
+  z-index: 1;
+  rotate: -0.5deg;
+  width: 131vw;
+}
+
+
+
+
+
+
+
 .App-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: calc(100vh - 10% - 20px - 60px); /* 10% for header and 20px for children margin  & 30px custom*/
-  width: 70%;
-  margin: auto; /* Center the div */
+  min-height: 750px; /* 8% for header and 20px for children margin  & 30px custom*/
+  width: 80%;
+  margin: 20px auto; /* Center the div */
   /*background: linear-gradient(319deg, #1e7c6dc7, #6fa5a4c2);*/
   border-radius: 25px;
+  gap: 15px;
 }
 
 
 
-.markdownInputContainer {
+.inputContainer {
   display: flex;
   flex-direction: column;
   height: 100%;
+}
+
+.inputContainer h2 {
+  margin-left: 10px;
 }
 
 .markdownInput {
-  width: calc(100% - 15px); /* 10px margin left + 5px margin right */
   resize: none;
   /*margin: 10px;*/
-  margin-right: 5px;
   padding: 20px 15px;
   border: none;
   border-radius: 20px;
-  background-color: #6ea4a340;
-  border: 1px solid #004D40;
+  background-color: white;
+  border: 1px solid #3f3d563d;
   /*box-shadow: 1px 1px 10px -4px #000000a6;*/
   font-size: 15px;
   height: 100%;
+  /*border: 1px solid #ff8b00;*/
 }
 
 
-.markdownOutputContainer {
+.outputContainer {
   display: flex;
   flex-direction: column;
   height: 100%;
 }
 
-.markdownOutput {
-  width: calc(100% - 15px); /* 10px margin right + 5px margin left */
+.outputContainer h2 {
+  margin-left: 10px;
+}
+
+.htmlOutput {
   /*margin: 10px;*/
-  margin-left: 5px;
   background-color: white;
   padding: 10px 15px;
   overflow-y: auto;
   border-radius: 20px;
-  background-color: #1c7b6c;
+  background-color: #6c63ff;
   color: white;
   font-size: 15px;
   height: 100%;
