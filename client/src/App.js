@@ -12,6 +12,13 @@ class App extends Component {
     };
   }
 
+
+  componentDidMount() {
+    this.setState({ markdown: placeholder });
+    this.handleMarkdownChange({ target: { value: placeholder } }); // Initialize with placeholder
+  }
+
+
   handleMarkdownChange = async (e) => {
     const markdownText = e.target.value;
     this.setState({ markdown: markdownText });
@@ -28,6 +35,7 @@ class App extends Component {
     this.setState({ html: data.html }); // Set the received HTML to state
   }
 
+
   render() {
     return (
       <div className="App">
@@ -37,8 +45,15 @@ class App extends Component {
         </header>
   
         <div className="App-content">
-          <textarea className="markdownInput" onChange={this.handleMarkdownChange} value={this.state.markdown}></textarea>
-          <div className="markdownOutput" dangerouslySetInnerHTML={{ __html: this.state.html }}>
+          <div className='markdownInputContainer'>
+            <h2>Markdown Input</h2>
+            <textarea className="markdownInput" onChange={this.handleMarkdownChange} value={this.state.markdown}></textarea>
+          </div>
+
+          <div className='markdownOutputContainer'>
+            <h2>HTML Output</h2>
+            <div className="markdownOutput" dangerouslySetInnerHTML={{ __html: this.state.html }}>
+            </div>
           </div>
         </div>
   
@@ -48,5 +63,21 @@ class App extends Component {
     );
   }
 }
+
+
+const placeholder = `# Markdown2HTML Converter
+
+This application allows you to convert Markdown text into HTML on the fly. Simply type or paste your Markdown text into the input box, and it will automatically be converted to HTML.\n
+
+## Features
+
+- Instant conversion of Markdown to HTML
+- Live preview of the output as you type
+- User-friendly interface
+
+## How to Use
+
+* **Input:** Paste or type your Markdown text into the input field on the left.
+* **Preview:** The HTML output will appear on the right in real-time.`;
 
 export default App;
