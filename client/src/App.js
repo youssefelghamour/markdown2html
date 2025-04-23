@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { MdOutlineContentCopy } from "react-icons/md";
-import headerLogo from "./assets/headerLogo.png";
+import headerLogo from "./assets/logo.png";
 
 
 
@@ -43,7 +43,17 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={headerLogo} alt="Logo" className="header-logo" />
+          <div className='header-logo-container'>
+            <img src={headerLogo} alt="Logo" className="header-logo" />
+            <h2>Markdown2HTML</h2>
+          </div>
+
+          <nav>
+            <a href="https://github.com/youssefelghamour/markdown2html">Features</a>
+            <a href="https://github.com/youssefelghamour/markdown2html">How to Use</a>
+            <a href="https://github.com/youssefelghamour/markdown2html">About</a>
+            <a href="https://github.com/youssefelghamour/markdown2html">GitHub Repo</a>
+          </nav>
         </header>
 
         <div className="Hero-section">
