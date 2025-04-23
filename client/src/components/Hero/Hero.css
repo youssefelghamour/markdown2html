@@ -1,0 +1,90 @@
+.Hero-section {
+    min-height: 260px;
+    align-content: center;
+    text-align: center;
+    background: linear-gradient(133deg, #ffffff, #ff780085, #1b7a6b);
+    width: 100%;
+    /*padding-top: 2%;*/
+    /*padding-bottom: 4%;*/
+    background: linear-gradient(0deg, #f2f2f2, white 40%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.Hero-section h1, h2, p {
+    position: relative;
+    z-index: 1;
+}
+
+.Hero-section h1 {
+    font-family: "Special Gothic Expanded One", sans-serif;
+    font-size: 40px;
+    margin: 0;
+    margin-bottom: 40px;
+    transition: transform 0.1s ease;
+    cursor: pointer;
+    text-shadow: 1px 1px 1px #302f46, 1px 2px 1px #302f46, 1px 3px 1px #302f46, 1px 4px 1px #302f46, 1px 5px 1px #302f46, 1px 6px 1px #302f46, 1px 7px 1px #302f46, 1px 8px 1px #302f46, 1px 9px 1px #302f46, 1px 10px 1px #302f46, 1px 18px 6px rgba(16, 16, 16, 0.4), 1px 22px 10px rgba(16, 16, 16, 0.2), 1px 25px 35px rgba(16, 16, 16, 0.2), 1px 30px 60px rgba(16, 16, 16, 0.4);
+    animation: zoomInOut 5s ease-in-out infinite;
+    width: fit-content;
+    justify-self: center;
+}
+
+@keyframes zoomInOut {
+    0% {
+        scale: 0.95;
+    }
+    50% {
+        scale: 1.05;
+    }
+    100% {
+        scale: 0.95;
+    }
+}
+
+.Hero-section h1:hover {
+    transform: scale(1.05);
+    /*animation: none 1s ease;*/
+}
+
+.Hero-section h2 {
+    color: #302f46;
+    margin: 10px 0 0 0;
+    font-family: 'Special Gothic Expanded One';
+}
+
+.Hero-section p {
+    color: #9d9d9d;
+    font-family: 'Special Gothic Expanded One';
+}
+
+
+.Background-shape {
+    position: relative;
+}
+
+/*
+.wavy-shape {
+    position: absolute;
+    top: -375px;
+    height: 600px;
+    left: -80px;
+    background-color: #6c63ff;
+    z-index: 1;
+    /*rotate: -2deg;*
+    width: 131vw;
+    background-color: #4c43de;
+}
+*/
+/*
+.second-wavy-shape {
+    position: absolute;
+    top: -360px;
+    height: 600px;
+    /*left: -550px;*
+    background-color: #4d4b6c;
+    z-index: 0;
+    rotate: 0deg;
+    width: 131vw;
+}
+*/

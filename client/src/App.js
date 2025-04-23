@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import { MdOutlineContentCopy } from "react-icons/md";
-import headerLogo from "./assets/logo.png";
+import Header from './components/Header/Header';
+import Hero from './components/Hero/Hero';
 
 
 
@@ -42,29 +43,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <div className='header-logo-container'>
-            <img src={headerLogo} alt="Logo" className="header-logo" />
-            <h2>Markdown2HTML</h2>
-          </div>
+        <Header />
 
-          <nav>
-            <a href="https://github.com/youssefelghamour/markdown2html">Features</a>
-            <a href="https://github.com/youssefelghamour/markdown2html">How to Use</a>
-            <a href="https://github.com/youssefelghamour/markdown2html">About</a>
-            <a href="https://github.com/youssefelghamour/markdown2html">GitHub Repo</a>
-          </nav>
-        </header>
-
-        <div className="Hero-section">
-          <div className="Background-shape">
-            <div className="wavy-shape"></div>
-            <div className="second-wavy-shape"></div>
-          </div>
-          <h1>Markdown2HTML</h1>
-          <h2>Instant Preview, Instant Conversion</h2>
-          <p>An interactive tool that shows you how your Markdown will look as you type.</p>
-        </div>
+        <Hero />
   
         <div className="App-content">
           <div className='inputContainer'>
