@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { MdOutlineContentCopy } from "react-icons/md";
+import headerLogo from "./assets/headerLogo.png";
 
 
 
@@ -42,6 +43,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
+          <img src={headerLogo} alt="Logo" className="header-logo" />
         </header>
 
         <div className="Hero-section">
@@ -73,7 +75,7 @@ class App extends Component {
                 </button>
               </div>
             </div>
-            <button className="copy-button" onClick={() => navigator.clipboard.writeText(this.state.html)}>
+            <button className="copy-button" title="Copy" onClick={() => navigator.clipboard.writeText(this.state.html)}>
               <MdOutlineContentCopy size={17}/>
             </button>
             {this.state.preview ?
