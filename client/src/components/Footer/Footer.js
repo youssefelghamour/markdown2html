@@ -37,6 +37,8 @@ class Footer extends Component {
                         <FaFacebookSquare />
                         <FaInstagramSquare />
                         <FaLinkedin />
+
+                        <p style={{ fontSize: '12px' }}><b>Copyright</b> &copy; Youssef El Ghamour 2025</p>
                     </div>
                 </div>
             </footer>

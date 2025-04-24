@@ -20,7 +20,8 @@
     color: #5e658d;
     background: #c2c1c7;
     color: #302f46;
-    background: linear-gradient(360deg, #c2c1c7, #f2f2f2);
+    background: linear-gradient(360deg, #c2c1c7 -40%, #f2f2f2);
+    background: linear-gradient(180deg, #f2f2f2, #ffffff);
 }
 
 
