@@ -1,6 +1,8 @@
 import { Component } from "react";
 import { MdOutlineContentCopy } from "react-icons/md";
 import "./Content.css";
+import { FaCheck } from "react-icons/fa";
+
 
 
 class Content extends Component {
@@ -45,20 +47,22 @@ class Content extends Component {
 
                 <div className='outputContainer'>
                     <div className="outputHeader">
-                    <h2>HTML Output</h2>
+                        <h2>HTML Output</h2>
 
-                    <div>
-                        <button className="preview-button" onClick={() => this.setState({ preview: true })} id={!this.state.preview ? 'not-selected-button' : ''}>
-                        Preview
-                        </button>
-                        <button className="html-button" onClick={() => this.setState({ preview: false })} id={this.state.preview ? 'not-selected-button' : ''}>
-                        HTML
-                        </button>
+                        <div>
+                            <button className="preview-button" onClick={() => this.setState({ preview: true })} id={!this.state.preview ? 'not-selected-button' : ''}>
+                            Preview
+                            </button>
+                            <button className="html-button" onClick={() => this.setState({ preview: false })} id={this.state.preview ? 'not-selected-button' : ''}>
+                            HTML
+                            </button>
+                        </div>
                     </div>
-                    </div>
+
                     <button className="copy-button" title="Copy" onClick={() => navigator.clipboard.writeText(this.state.html)}>
-                    <MdOutlineContentCopy size={17}/>
+                        <MdOutlineContentCopy size={17}/>
                     </button>
+
                     {this.state.preview ?
                     (
                         <div className="htmlOutput" dangerouslySetInnerHTML={{ __html: this.state.html }}>

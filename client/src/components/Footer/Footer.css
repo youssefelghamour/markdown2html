@@ -26,12 +26,80 @@
 
 .footer-container {
     padding: 20px 35px;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.footer-logo-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-logo-text {
+    display: flex;
+    align-items: center;
+}
+
+.footer-logo-text h3 {
+    font-family: "Special Gothic Expanded One", sans-serif;
+    font-size: 18px;
+    margin-left: 10px;
 }
 
 .footer-logo {
     height: 40px;
+    width: 40px;
     filter: brightness(1.6);
 }
+
+.footer-logo-container h4 {
+    color: #aaaac0;
+}
+
+.footer-logo-container p {
+    font-size: 13px;
+    color: #9090a5;
+    width: 55%;
+}
+
+
+
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 17px;
+    margin: 0 12px;
+    transition: transform 0.3s ease;
+}
+
+.footer-nav a:hover {
+    transform: scale(1.1);
+}
+
+
+
+
+
+
+.footer-socials {
+    font-size: 2rem;
+    margin-top: 20px;
+}
+
+
+
+
+
+
+
+
 
 
 
