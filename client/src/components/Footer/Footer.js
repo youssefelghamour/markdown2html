@@ -1,38 +1,39 @@
 import { Component } from "react";
-import './Footer.css';
 import headerLogo from "../../assets/logo.png";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaInstagramSquare } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
+import { css } from 'aphrodite';
+import styles from './FooterStyles';
 
 
 class Footer extends Component {
     render() {
         return (
-            <footer className="App-footer">
-                <div className="footer-message">
+            <footer className={css(styles.appFooter)}>
+                <div className={css(styles.footerMessage)}>
                     <h2>Clean, fast, and live — Hope this tool saved you time and effort!</h2>
                 </div>
 
-                <div className="footer-container">
-                    <div className="footer-logo-container">
-                        <div className="footer-logo-text">
-                            <img src={headerLogo} className="footer-logo" alt="Logo" />
-                            <h3>Markdown2HTML</h3>
+                <div className={css(styles.footerContainer)}>
+                    <div className={css(styles.footerLogoContainer)}>
+                        <div className={css(styles.footerLogoText)}>
+                            <img src={headerLogo} className={css(styles.footerLogo)} alt="Logo" />
+                            <h3 className={css(styles.footerLogoTextH3)}>Markdown2HTML</h3>
                         </div>
-                        <h4>Instant Preview, Instant Conversion</h4>
-                        <p>An interactive tool that shows you how your Markdown will look as you type.</p>
+                        <h4 className={css(styles.footerLogoH4)}>Instant Preview, Instant Conversion</h4>
+                        <p className={css(styles.footerLogoP)}>An interactive tool that shows you how your Markdown will look as you type.</p>
                     </div>
 
-                    <nav className="footer-nav">
-                        <a href="https://github.com/youssefelghamour/markdown2html">Features</a>
-                        <a href="https://github.com/youssefelghamour/markdown2html">How to Use</a>
-                        <a href="https://github.com/youssefelghamour/markdown2html">About</a>
-                        <a href="https://github.com/youssefelghamour/markdown2html">GitHub Repo</a>
+                    <nav className={css(styles.footerNav)}>
+                        <a className={css(styles.footerNavLink)} href="https://github.com/youssefelghamour/markdown2html">Features</a>
+                        <a className={css(styles.footerNavLink)} href="https://github.com/youssefelghamour/markdown2html">How to Use</a>
+                        <a className={css(styles.footerNavLink)} href="https://github.com/youssefelghamour/markdown2html">About</a>
+                        <a className={css(styles.footerNavLink)} href="https://github.com/youssefelghamour/markdown2html">GitHub Repo</a>
                     </nav>
                     
-                    <div className="footer-socials">
+                    <div className={css(styles.footerSocials)}>
                         <FaSquareXTwitter />
                         <FaFacebookSquare />
                         <FaInstagramSquare />
