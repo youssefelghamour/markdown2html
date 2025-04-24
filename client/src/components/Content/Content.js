@@ -37,6 +37,16 @@ class Content extends Component {
         this.setState({ html: data.html }); // Set the received HTML to state
     }
 
+    handleCopy = () => {
+        navigator.clipboard.writeText(this.state.html).then(() => {
+            const flashMessage = document.querySelector('.flash-message');
+            flashMessage.id = 'show';
+            setTimeout(() => {
+                flashMessage.id = 'hide';
+            }, 2000);
+        });
+    }
+
     render() {
         return (
             <div className="App-content">
@@ -51,15 +61,15 @@ class Content extends Component {
 
                         <div>
                             <button className="preview-button" onClick={() => this.setState({ preview: true })} id={!this.state.preview ? 'not-selected-button' : ''}>
-                            Preview
+                                Preview
                             </button>
                             <button className="html-button" onClick={() => this.setState({ preview: false })} id={this.state.preview ? 'not-selected-button' : ''}>
-                            HTML
+                                HTML
                             </button>
                         </div>
                     </div>
 
-                    <button className="copy-button" title="Copy" onClick={() => navigator.clipboard.writeText(this.state.html)}>
+                    <button className="copy-button" title="Copy" onClick={() => this.handleCopy()}>
                         <MdOutlineContentCopy size={17}/>
                     </button>
 
@@ -72,6 +82,11 @@ class Content extends Component {
                         {this.state.html}
                         </div>
                     )}
+                </div>
+
+                <div className="flash-message" id="hide">
+                    <FaCheck />
+                    <p>Copied to clipboard</p>
                 </div>
             </div>
         );
