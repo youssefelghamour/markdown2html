@@ -1,3 +1,5 @@
+![title](./assets/title.png)
+
 # Mardkown To HTML
 
 A web app that converts Markdown syntax into HTML, allowing users to preview and copy the generated HTML output easily. This app provides a user-friendly interface for quickly converting Markdown syntax.
@@ -73,6 +75,10 @@ A web app that converts Markdown syntax into HTML, allowing users to preview and
         "html": "<h2>Markdown Text</h2>"
     }
     ```
+
+## Screenshot
+
+![website-screenshot](./assets/markdown2html-screenshot.jpeg)
 
 ## Author
 
