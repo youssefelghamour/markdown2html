@@ -2,6 +2,7 @@ import { Component } from "react";
 import { MdOutlineContentCopy } from "react-icons/md";
 import "./Content.css";
 import { FaCheck } from "react-icons/fa";
+import image from '../../assets/title.png';
 
 
 
@@ -94,7 +95,7 @@ class Content extends Component {
 }
 
 
-const placeholder = `# Markdown2HTML Converter
+const placeholder = `# Markdown to HTML Converter
 
 This application allows you to convert Markdown text into HTML on the fly. Simply type or paste your Markdown text into the input box, and it will automatically be converted to HTML.\n
 
@@ -107,7 +108,28 @@ This application allows you to convert Markdown text into HTML on the fly. Simpl
 ## How to Use
 
 * **Input:** Paste or type your Markdown text into the input field on the left.
-* **Preview:** The HTML output will appear on the right in real-time.`;
+* **Preview:** The HTML output will appear on the right in real-time.
+
+## Guide
+
+- To add an unordered list item, start your sentence with '-'.
+- To add an ordered list item, start your sentence with '*'.
+- To add an image, use the following syntax: **![label](url)**
+  ![logo_image](${image})
+- To add a blockquote, use '>' at the beginning of your sentence:
+  > This is a quote.
+
+- To add an inline code, start your sentence with a backtick \`:
+Example of \`an inline code block\`: \`print("Hello")\`.
+- To add a multiline code block, start your sentence with 3 backticks or 4 spaces:
+
+    # Example code in python
+    if true:
+      print('Hello World!')
+
+- To make text **bold**, simply wrap it in '**'.
+- To make text __italic__, wrap it in '__'.
+`;
 
 
 export default Content;

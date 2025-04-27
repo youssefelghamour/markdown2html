@@ -55,6 +55,7 @@ def convert(markdown_text):
         start_index = None
         end_index = None
         
+        """
         # Process for ((content))
         if '((' in line and '))' in line:
             start_index = line.find('((')
@@ -75,7 +76,7 @@ def convert(markdown_text):
             # Covert substring to MD5 hash
             md5_hash = hashlib.md5(substr.encode()).hexdigest()
             line = line[:start_index] + md5_hash + line[end_index + 2:]
-
+        """
 
         # the third argument 1 is to replace only one occurence, otherwise  the replace will replace all the ** on the line
         # Replace the first  ** with the opening bold tag
@@ -160,6 +161,17 @@ def convert(markdown_text):
             if in_blockquote:
                 result.append('</blockquote>\n')
                 in_blockquote = False
+
+
+        # Handle images
+        if line.startswith('![') and '](' in line and line.endswith(')'):
+            # Extract the label between []
+            end_index = line.find('](')
+            label = line[2:end_index]
+            # Extract the URL between () and remove the last )
+            url = line[end_index + 2:-1]
+            result.append(f'<img src="{url}" alt="{label}" />\n')
+            continue
 
 
         # Handle paragraphs
