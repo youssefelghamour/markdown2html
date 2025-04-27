@@ -136,12 +136,20 @@
 }
 
 
-.htmlOutput code {
+/* code block */
+.htmlOutput pre code {
     background: #4e4c66;
     padding: 7px 11px;
     border-radius: 2px;
     display: block;
     width: 100%;
+}
+
+/* inline code */
+.htmlOutput code {
+    background: #4e4c66;
+    padding: 2px 3px;
+    border-radius: 2px;
 }
 
 

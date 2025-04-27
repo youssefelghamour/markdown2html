@@ -1,26 +1,11 @@
 #!/usr/bin/python3
 """ module for a script that converts from markdown to html """
-import sys
-import os
+import re
 import hashlib
 
 
 def convert(markdown_text):
-    """ Script that takes an input markdown file and converts it to HTML, writing the result to an HTML file
-    
-        The conversion can be done automatically with the markdown library:
-        import markdown
-
-        # Read the markdown file
-        with open('README.md', 'r') as input_file:
-            markdown_text = input_file.read()
-
-        # Convert markdown to HTML
-        html_output = markdown.markdown(markdown_text)
-
-        # Write HTML output to a file
-        with open('README.html', 'w') as output_file:
-            output_file.write(html_output)
+    """ Script that takes an input markdown text and converts it to HTML
     """
     result = []
     content = markdown_text.splitlines()
@@ -62,6 +47,7 @@ def convert(markdown_text):
                 # Close the code block
                 result.append("</code></pre>\n")
                 in_code_block = False
+            line = line.strip()  # Remove leading and trailing spaces
         
 
         start_index = None
@@ -161,8 +147,17 @@ def convert(markdown_text):
             if not in_paragraph:
                 result.append("<p>\n")
                 in_paragraph = True
+            
+            # Handle inline code (single backticks)
+            # . = any char, * = any number of occurence, ? = one group per time
+            # \1 replace the mactched group 1
+            line = re.sub(r'`(.*?)`', r'<code>\1</code>', line)
+        
+            # Add the line to the paragraph
             result.append(f"\t{line.strip()}\n")
 
+            # If there's a next line and it's not empty, add a <br/> tag
+            # This is to avoid adding <br/> at the end of the paragraph
             if i+1 < len(content) and content[i+1].strip():
                 result.append("\t\t<br/>\n")
         else:
