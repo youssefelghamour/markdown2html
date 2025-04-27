@@ -152,6 +152,13 @@
     border-radius: 2px;
 }
 
+/* blockquote */
+.htmlOutput blockquote {
+    border-left: 4px solid #605d7e;
+    padding-left: 16px;
+    margin-left: 0;
+}
+
 
 
 

@@ -18,6 +18,8 @@ def convert(markdown_text):
     in_paragraph = False
     # Flag for code block
     in_code_block = False
+    # Flag for blockquote
+    in_blockquote = False
 
 
     for i in range(len(content)):
@@ -141,6 +143,24 @@ def convert(markdown_text):
                 result.append("</ol>\n")
                 in_ol_list = False
         
+        # Handle blockquotes
+        if line.startswith('>'):
+            if not in_blockquote:
+                # First break out of the paragraph if we're in one
+                if in_paragraph:
+                    result.append("</p>\n")
+                    in_paragraph = False
+                
+                result.append('<blockquote>\n')
+                in_blockquote = True
+            quote = line.strip('>')
+            result.append(f"\t{quote}\n")
+            continue
+        else:
+            if in_blockquote:
+                result.append('</blockquote>\n')
+                in_blockquote = False
+
 
         # Handle paragraphs
         if line.strip():
@@ -175,5 +195,7 @@ def convert(markdown_text):
         result.append("</p>\n")
     if in_code_block:
         result.append("</code></pre>\n")
+    if in_blockquote:
+        result.append('</blockquote>\n')
     
     return ''.join(result)
