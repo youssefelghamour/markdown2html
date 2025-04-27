@@ -184,6 +184,9 @@ def convert(markdown_text):
             # . = any char, * = any number of occurence, ? = one group per time
             # \1 replace the mactched group 1
             line = re.sub(r'`(.*?)`', r'<code>\1</code>', line)
+
+            # Handle links [text](url)
+            line = re.sub(r'\[(.*?)\]\((.*?)\)', r'<a href="\2">\1</a>', line)
         
             # Add the line to the paragraph
             result.append(f"\t{line.strip()}\n")

@@ -129,6 +129,8 @@ Example of \`an inline code block\`: \`print("Hello")\`.
 
 - To make text **bold**, simply wrap it in '**'.
 - To make text __italic__, wrap it in '__'.
+- To add links use the following syntax: [text](url):
+[GitHub Repo](https://github.com/youssefelghamour/markdown2html)
 `;
 
 
