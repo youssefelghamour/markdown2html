@@ -136,6 +136,21 @@
 }
 
 
+.htmlOutput code {
+    background: #4e4c66;
+    padding: 7px 11px;
+    border-radius: 2px;
+    display: block;
+    width: 100%;
+}
+
+
+
+
+
+
+
+/* The following styles are for the flash message that appears when the user copies the HTML code */
 
 #hide {
     opacity: 0;

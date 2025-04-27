@@ -31,10 +31,38 @@ def convert(markdown_text):
     in_ol_list = False
     # Flag for paragraph
     in_paragraph = False
+    # Flag for code block
+    in_code_block = False
 
 
     for i in range(len(content)):
         line = content[i]
+        
+        # Handle code blocks (4 spaces indentation)
+        if line.startswith('    '):
+            # If the line starts with 4 spaces (tab), treat it as code block
+            # First break out of the paragraph if we're in one
+            if in_paragraph:
+                result.append("</p>\n")
+                in_paragraph = False
+            
+            # If it's the first line of the code block
+            if not in_code_block:
+                result.append("<pre><code>")
+                in_code_block = True
+            
+            line = line[4:]  # Remove the 4 spaces indentation
+
+            # Add the line to the code block
+            result.append(f"{line}\n")
+            continue
+        else:
+            # If the line doesn't start with 4 spaces, close the code block if it was open   
+            if in_code_block:
+                # Close the code block
+                result.append("</code></pre>\n")
+                in_code_block = False
+        
 
         start_index = None
         end_index = None
@@ -150,5 +178,7 @@ def convert(markdown_text):
         result.append("</ol>\n")
     if in_paragraph:
         result.append("</p>\n")
+    if in_code_block:
+        result.append("</code></pre>\n")
     
     return ''.join(result)
