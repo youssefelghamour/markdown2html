@@ -76,9 +76,15 @@ A web app that converts Markdown syntax into HTML, allowing users to preview and
     }
     ```
 
-## Screenshot
+## Screenshots
 
-![website-screenshot](./assets/markdown2html-screenshot.jpeg)
+#### Markdown
+
+![website-screenshot](./assets/markdown.jpeg)
+
+#### HTML
+
+![website-screenshot](./assets/html.jpeg)
 
 ## Author
 
